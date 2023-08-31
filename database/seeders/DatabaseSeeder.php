@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        //Roles
         \App\Models\Role::factory()->create([
             'id'=>1,
             'name' => 'Admin'
@@ -40,11 +42,35 @@ class DatabaseSeeder extends Seeder
 
 
    
-
+        //Users
         \App\Models\User::factory()->create([
-            'name' => 'Student',
-            'role_id' => 6,
-            'email' => 'student@student',
+            'name' => 'Admin',
+            'role_id' => 1,
+            'email' => 'Nikolas@official.com',
+            'password'=>bcrypt('password')
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'role_id' => 1,
+            'email' => 'admin@admin',
+            'password'=>bcrypt('1234')
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Director',
+            'role_id' => 2,
+            'email' => 'director@director',
+            'password'=>bcrypt('1234')
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Accounting',
+            'role_id' => 3,
+            'email' => 'accounting@accounting',
+            'password'=>bcrypt('1234')
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Secretary',
+            'role_id' => 4,
+            'email' => 'secretary@secretary',
             'password'=>bcrypt('1234')
         ]);
         \App\Models\User::factory()->create([
@@ -54,23 +80,15 @@ class DatabaseSeeder extends Seeder
             'password'=>bcrypt('1234')
         ]);
         \App\Models\User::factory()->create([
-            'name' => 'Admin',
-            'role_id' => 1,
-            'email' => 'admin@admin',
+            'name' => 'Student',
+            'role_id' => 6,
+            'email' => 'student@student',
             'password'=>bcrypt('1234')
         ]);
-        \App\Models\User::factory()->create([
-            'name' => 'Secretary',
-            'role_id' => 3,
-            'email' => 'secretary@secretary',
-            'password'=>bcrypt('1234')
-        ]);
-        \App\Models\User::factory()->create([
-            'name' => 'Director',
-            'role_id' => 2,
-            'email' => 'director@director',
-            'password'=>bcrypt('1234')
-        ]);
+ 
+ 
+ 
+
 
     }
 }
